@@ -1,3 +1,4 @@
+// Tela de recuperação de senha 
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 
@@ -16,6 +17,7 @@ const TelaRecup = ({ navigation }) => {
 
 export default TelaRecup;
 
+// Estilização da tela
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', padding: 20, backgroundColor:'rgb(194, 194, 210)' },
   input: { borderWidth: 1, padding: 10, marginVertical: 10 },

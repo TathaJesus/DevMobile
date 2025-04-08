@@ -1,3 +1,4 @@
+// Tela para adicionar uma nova peça ao estoque
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet } from 'react-native';
 
@@ -8,8 +9,8 @@ const TelaAddPeca = ({ navigation, stock, setStock }) => {
 
   const handleAdd = () => {
     if (!name || !quantity || !code) return alert('Preencha todos os campos');
-    setStock([...stock, { name, quantity: Number(quantity), code }]);
-    navigation.goBack();
+    setStock([...stock, { name, quantity: Number(quantity), code }]); // Adiciona nova peça
+    navigation.goBack(); // Volta para tela de estoque
   };
 
   return (
@@ -24,6 +25,7 @@ const TelaAddPeca = ({ navigation, stock, setStock }) => {
 
 export default TelaAddPeca;
 
+// Estilo da tela
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 20, backgroundColor:'rgb(194, 194, 210)' },
   input: { borderWidth: 1, padding: 10, marginVertical: 10 },

@@ -1,3 +1,4 @@
+// Tela que mostra a lista de peças em estoque
 import React from 'react';
 import { View, Text, FlatList, Button, StyleSheet, TouchableOpacity } from 'react-native';
 
@@ -5,7 +6,7 @@ const TelaEstoque = ({ navigation, stock }) => {
   return (
     <View style={styles.container}>
       <FlatList
-        data={stock}
+        data={stock} // Recebe os dados do estoque
         keyExtractor={(item) => item.code}
         renderItem={({ item }) => (
           <TouchableOpacity onPress={() => navigation.navigate('Editar Peça', { piece: item })}>
@@ -15,6 +16,7 @@ const TelaEstoque = ({ navigation, stock }) => {
           </TouchableOpacity>
         )}
       />
+
       <Button title="Adicionar Nova Peça" onPress={() => navigation.navigate('Adicionar Peça')} />
     </View>
   );
@@ -22,6 +24,7 @@ const TelaEstoque = ({ navigation, stock }) => {
 
 export default TelaEstoque;
 
+// Estilo da tela
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 20, backgroundColor:'rgb(194, 194, 210)' },
   item: { padding: 10, borderBottomWidth: 1 },
